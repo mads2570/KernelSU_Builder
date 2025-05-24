@@ -42,6 +42,10 @@ jobs:
           key: ${{ runner.os }}-ccache-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-ccache-
+            
+     - name: Clean Kernel Source
+              run: make mrproper 
+              working-directory: /path/to/kernel/source     
 
       - name: Clone clang and kernel sources
         run: |
@@ -51,10 +55,6 @@ jobs:
       - name: Add Clang to PATH
         run: |
           echo "${CLANG_PATH}" >> $GITHUB_PATH
-
-          - name: Clean Kernel Source
-              run: make mrproper 
-              working-directory: /path/to/kernel/source
         
       - name: Compile kernel
         run: |
