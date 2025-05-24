@@ -53,8 +53,8 @@ jobs:
           echo "${CLANG_PATH}" >> $GITHUB_PATH
 
           - name: Clean Kernel Source
-  run: make mrproper
-  working-directory: /path/to/kernel/source
+              run: make mrproper 
+              working-directory: /path/to/kernel/source
         
       - name: Compile kernel
         run: |
