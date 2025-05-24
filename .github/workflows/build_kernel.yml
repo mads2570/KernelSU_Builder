@@ -31,7 +31,6 @@ jobs:
           sudo apt install -y lld binutils clang llvm zip flex bison gawk libiberty-dev autoconf kmod bc build-essential gcc libc6 curl libstdc++6 git wget libssl-dev cpio p7zip-full ccache
           sudo pip3 install yq
           curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-          sudo python2.7 get-pip.py
 
       - name: Set up ccache
         run: |
