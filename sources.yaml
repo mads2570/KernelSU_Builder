@@ -2,8 +2,8 @@ LineageOS-21.0:
   kernel:
     - git clone https://github.com/mads2570/android_kernel_samsung_sm7225.git -b lineage-21.0
   clang:
-    - git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 --depth=1 --single-branch --no-tags -b master aosp-clang/clang
-    - git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-14.0.0_r0.47 --depth=1 --single-branch --no-tags aosp-clang/aarch64-linux-android-4.9
+     - git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 --depth=1 --single-branch --no-tags -b master
+     - git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-14.0.0_r0.47 --depth=1 --single-branch --no-tags
           
   config:
     - make O=out ARCH=arm64 a42xq_eur_open_defconfig
