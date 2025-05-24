@@ -41,11 +41,7 @@ jobs:
           path: ~/.ccache
           key: ${{ runner.os }}-ccache-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-ccache-
-            
-     - name: Clean Kernel Source
-              run: make mrproper 
-              working-directory: /path/to/kernel/source     
+            ${{ runner.os }}-ccache-   
 
       - name: Clone clang and kernel sources
         run: |
