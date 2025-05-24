@@ -1,6 +1,6 @@
 LineageOS-21.0:
   kernel:
-    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225.git -b master
+    - https://github.com/TARKZiM/android_kernel_samsung_sm7225.git -b lineage-21.0
   clang:
     - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
           
