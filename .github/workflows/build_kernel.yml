@@ -23,7 +23,7 @@ jobs:
         run: |
           git remote add kernelsu https://github.com/tiann/KernelSU || true
           git fetch kernelsu
-          git merge kernelsu/main || true
+          git merge kernelsu/main --allow-unrelated-histories || true
 
       - name: Build Kernel
         run: |
