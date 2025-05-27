@@ -15,9 +15,9 @@ Lineage-21.0:
       target:
     - out/arch/arm64/boot/Image.gz-dtb
   anykernel:
-    - nashc
+    - mads2570/anykernel3
   kernelSU:
-    - stable-pin
+    - master
 
 Zenitsu:
   kernel:
