@@ -34,8 +34,21 @@ jobs:
          set -e
          sudo apt update
          sudo apt install -y python3-pip jq libarchive-tools zip lib32z-dev libghc-bzlib-dev pngcrush '^liblzma.*' python-is-python3 libsdl1.2-dev autoconf libxml2-utils wget pkg-config unzip w3m git kmod bc build-essential gcc libc6 curl libstdc++6 libssl-dev cpio p7zip-full ccache lld binutils clang llvm zip flex bison gawk libiberty-dev
-         sudo pip install pyyaml
          sudo pip3 install yq
+         
+         steps:
+        - name: Set up Python
+             uses: actions/setup-python@v4
+             with:
+             python-version: '3.x'
+
+         - name: Install dependencies
+             run: pip install PyYAML
+
+         - name: Convert YAML to JSON
+            run: |
+            import sys, yaml, json
+            json.dump(yaml.safe_load(sys.stdin), sys.stdout)
 
       - name: Set up ccache
         run: |
