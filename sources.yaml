@@ -1,8 +1,10 @@
-LineageOS-21.0:
+Lineage-21.0:
   kernel:
-    - git clone https://github.com/TARKZiM/android_kernel_samsung_sm7225.git -b lineage-21.0
+    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225 -b lineage-20.1
   clang:
-    - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
+    -  git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 --depth=1 --single-branch --no-tags -b master
+    -  git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-14.0.0_r0.47 --depth=1 --single-branch --no-tags aosp-clang/aarch64-linux-android-4.9
+          
           
   config:
 - make O=out ARCH=arm64 a42xq_eur_open_defconfig
@@ -19,9 +21,9 @@ LineageOS-21.0:
 
 Zenitsu:
   kernel:
-    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225 -b zenitsu-bak
+    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225 -b lineage-20.1
   clang:
-    - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
+    -git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-14.0.0_r0.47 --depth=1 --single-branch --no-tags aosp-clang/aarch64-linux-android-4.9
   config:
     - make O=out ARCH=arm64 a42xq_eur_open_defconfig
   build:
@@ -29,15 +31,16 @@ Zenitsu:
   target:
     - out/arch/arm64/boot/Image.gz-dtb
   anykernel:
-    - nashc
+    -  mads2570/anykernel3
   kernelSU:
     - stable-pin
 
 DivestOS-13:
   kernel:
-    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225 -b divest-13
+    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225 -b lineage-21.0
   clang:
-    - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
+    - git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-14.0.0_r0.47 --depth=1 --single-branch --no-tags aosp-clang/aarch64-linux-android-4.9
+          
   config:
     - make O=out ARCH=arm64 la42xq_eur_open_defconfig
   build:
@@ -45,16 +48,15 @@ DivestOS-13:
   target:
     - out/arch/arm64/boot/Image.gz-dtb
   anykernel:
-    - nashc
+    - mads2570/anykernel3
   kernelSU:
     - stable-pin
 
 
 Sage-Android-14:
   kernel:
-    - git clone https://github.com/Killerpac/android_kernel_realme_mt6785.git -b udc
-  clang:
-    - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
+    - git clone https://github.com/mads2570/android_kernel_samsung_sm7225 -b lineage-21.0
+    -git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 --depth=1 --single-branch --no-tags -b master
   config:
     - make O=out ARCH=arm64 a42xq_eur_open_defconfig
   build:
@@ -62,9 +64,9 @@ Sage-Android-14:
   target:
     - out/arch/arm64/boot/Image.gz-dtb
   anykernel:
-    - nashc
+    - mads2570/anykernel3
   kernelSU:
-    - stable-pin
+    - master
     
 Clean:
   out:
