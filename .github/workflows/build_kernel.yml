@@ -33,7 +33,7 @@ jobs:
         run: pip install pyyaml
           set -e
           sudo apt update
-          sudo apt install  python3-pip jq libarchive-tools zip lib32z-dev libghc-bzlib-dev pngcrush liblzma python-is-python3 libsdl1.2-dev autoconf libxml2-utils wget pkg-config unzip w3m git kmod bc build-essential gcc libc6 curl libstdc++6 libssl-dev cpio p7zip-full ccache lld binutils clang llvm zip flex bison gawk libiberty-dev
+          sudo apt install  python3-pip jq libarchive-tools zip lib32z-dev libghc-bzlib-dev pngcrush liblzma python-is-python3 libsdl1.2-dev autoconf libxml2-utils wget pkg-config unzip w3m git kmod bc build-essential gcc libc6 curl libssl-dev cpio p7zip-full ccache lld binutils clang llvm zip flex bison gawk libiberty-dev
           sudo pip3 install yq
 
       - name: Set up ccache
