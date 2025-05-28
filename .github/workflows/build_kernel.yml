@@ -144,7 +144,7 @@ jobs:
               </details>
           draft: false
           prerelease: false
-          make -j$(nproc)
+           make -j$(nproc)
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
